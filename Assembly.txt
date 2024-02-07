@@ -1,0 +1,390 @@
+Created with objdump -d Main.o > Assembly.txt
+.o File created by using gcc -c Main.c
+Main.o:	file format mach-o arm64
+
+Disassembly of section __TEXT,__text:
+
+0000000000000000 <ltmp0>:
+       0: ff 03 03 d1  	sub	sp, sp, #192
+       4: fd 7b 0b a9  	stp	x29, x30, [sp, #176]
+       8: fd c3 02 91  	add	x29, sp, #176
+       c: 08 00 00 90  	adrp	x8, 0x0 <ltmp0+0xc>
+      10: 08 01 40 f9  	ldr	x8, [x8]
+      14: 08 01 40 f9  	ldr	x8, [x8]
+      18: a8 83 1f f8  	stur	x8, [x29, #-8]
+      1c: 00 00 00 90  	adrp	x0, 0x0 <ltmp0+0x1c>
+      20: 00 00 00 91  	add	x0, x0, #0
+      24: 00 00 00 94  	bl	0x24 <ltmp0+0x24>
+      28: 08 00 00 90  	adrp	x8, 0x0 <ltmp0+0x28>
+      2c: 08 01 40 f9  	ldr	x8, [x8]
+      30: 02 01 40 f9  	ldr	x2, [x8]
+      34: e0 4b 00 91  	add	x0, sp, #18
+      38: e0 07 00 f9  	str	x0, [sp, #8]
+      3c: 41 06 80 52  	mov	w1, #50
+      40: 00 00 00 94  	bl	0x40 <ltmp0+0x40>
+      44: e8 07 40 f9  	ldr	x8, [sp, #8]
+      48: 00 00 00 90  	adrp	x0, 0x0 <ltmp0+0x48>
+      4c: 00 00 00 91  	add	x0, x0, #0
+      50: e9 03 00 91  	mov	x9, sp
+      54: 28 01 00 f9  	str	x8, [x9]
+      58: 00 00 00 94  	bl	0x58 <ltmp0+0x58>
+      5c: 08 00 00 90  	adrp	x8, 0x0 <ltmp0+0x5c>
+      60: 08 01 40 f9  	ldr	x8, [x8]
+      64: 08 01 40 f9  	ldr	x8, [x8]
+      68: a9 83 5f f8  	ldur	x9, [x29, #-8]
+      6c: 08 01 09 eb  	subs	x8, x8, x9
+      70: a1 00 00 54  	b.ne	0x84 <ltmp0+0x84>
+      74: 01 00 00 14  	b	0x78 <ltmp0+0x78>
+      78: fd 7b 4b a9  	ldp	x29, x30, [sp, #176]
+      7c: ff 03 03 91  	add	sp, sp, #192
+      80: c0 03 5f d6  	ret
+      84: 00 00 00 94  	bl	0x84 <ltmp0+0x84>
+
+0000000000000088 <_fileWriter>:
+      88: ff 03 01 d1  	sub	sp, sp, #64
+      8c: fd 7b 03 a9  	stp	x29, x30, [sp, #48]
+      90: fd c3 00 91  	add	x29, sp, #48
+      94: a0 83 1f f8  	stur	x0, [x29, #-8]
+      98: a1 03 1f f8  	stur	x1, [x29, #-16]
+      9c: 00 00 00 90  	adrp	x0, 0x0 <_fileWriter+0x14>
+      a0: 00 00 00 91  	add	x0, x0, #0
+      a4: 01 00 00 90  	adrp	x1, 0x0 <_fileWriter+0x1c>
+      a8: 21 00 00 91  	add	x1, x1, #0
+      ac: 00 00 00 94  	bl	0xac <_fileWriter+0x24>
+      b0: e0 0f 00 f9  	str	x0, [sp, #24]
+      b4: aa 83 5f f8  	ldur	x10, [x29, #-8]
+      b8: a8 03 5f f8  	ldur	x8, [x29, #-16]
+      bc: 00 00 00 90  	adrp	x0, 0x0 <_fileWriter+0x34>
+      c0: 00 00 00 91  	add	x0, x0, #0
+      c4: e9 03 00 91  	mov	x9, sp
+      c8: 2a 01 00 f9  	str	x10, [x9]
+      cc: 28 05 00 f9  	str	x8, [x9, #8]
+      d0: 00 00 00 94  	bl	0xd0 <_fileWriter+0x48>
+      d4: e0 0f 40 f9  	ldr	x0, [sp, #24]
+      d8: aa 83 5f f8  	ldur	x10, [x29, #-8]
+      dc: a8 03 5f f8  	ldur	x8, [x29, #-16]
+      e0: 01 00 00 90  	adrp	x1, 0x0 <_fileWriter+0x58>
+      e4: 21 00 00 91  	add	x1, x1, #0
+      e8: e9 03 00 91  	mov	x9, sp
+      ec: 2a 01 00 f9  	str	x10, [x9]
+      f0: 28 05 00 f9  	str	x8, [x9, #8]
+      f4: 00 00 00 94  	bl	0xf4 <_fileWriter+0x6c>
+      f8: e0 0f 40 f9  	ldr	x0, [sp, #24]
+      fc: 00 00 00 94  	bl	0xfc <_fileWriter+0x74>
+     100: fd 7b 43 a9  	ldp	x29, x30, [sp, #48]
+     104: ff 03 01 91  	add	sp, sp, #64
+     108: c0 03 5f d6  	ret
+
+000000000000010c <_checkout>:
+     10c: ff 43 03 d1  	sub	sp, sp, #208
+     110: fd 7b 0c a9  	stp	x29, x30, [sp, #192]
+     114: fd 03 03 91  	add	x29, sp, #192
+     118: 08 00 00 90  	adrp	x8, 0x0 <_checkout+0xc>
+     11c: 08 01 40 f9  	ldr	x8, [x8]
+     120: 08 01 40 f9  	ldr	x8, [x8]
+     124: a8 83 1f f8  	stur	x8, [x29, #-8]
+     128: e0 27 00 f9  	str	x0, [sp, #72]
+     12c: e1 23 00 f9  	str	x1, [sp, #64]
+     130: e0 53 01 91  	add	x0, sp, #84
+     134: e0 0f 00 f9  	str	x0, [sp, #24]
+     138: 01 00 00 90  	adrp	x1, 0x0 <_checkout+0x2c>
+     13c: 21 00 00 91  	add	x1, x1, #0
+     140: 82 0c 80 d2  	mov	x2, #100
+     144: e2 0b 00 f9  	str	x2, [sp, #16]
+     148: 00 00 00 94  	bl	0x148 <_checkout+0x3c>
+     14c: e2 0b 40 f9  	ldr	x2, [sp, #16]
+     150: e0 0f 40 f9  	ldr	x0, [sp, #24]
+     154: e1 27 40 f9  	ldr	x1, [sp, #72]
+     158: 00 00 00 94  	bl	0x158 <_checkout+0x4c>
+     15c: e2 0b 40 f9  	ldr	x2, [sp, #16]
+     160: e0 0f 40 f9  	ldr	x0, [sp, #24]
+     164: 01 00 00 90  	adrp	x1, 0x0 <_checkout+0x58>
+     168: 21 00 00 91  	add	x1, x1, #0
+     16c: 00 00 00 94  	bl	0x16c <_checkout+0x60>
+     170: e2 0b 40 f9  	ldr	x2, [sp, #16]
+     174: e0 0f 40 f9  	ldr	x0, [sp, #24]
+     178: e1 23 40 f9  	ldr	x1, [sp, #64]
+     17c: 00 00 00 94  	bl	0x17c <_checkout+0x70>
+     180: 00 00 00 90  	adrp	x0, 0x0 <_checkout+0x74>
+     184: 00 00 00 91  	add	x0, x0, #0
+     188: 01 00 00 90  	adrp	x1, 0x0 <_checkout+0x7c>
+     18c: 21 00 00 91  	add	x1, x1, #0
+     190: 00 00 00 94  	bl	0x190 <_checkout+0x84>
+     194: e0 1f 00 f9  	str	x0, [sp, #56]
+     198: 00 00 00 90  	adrp	x0, 0x0 <_checkout+0x8c>
+     19c: 00 00 00 91  	add	x0, x0, #0
+     1a0: 01 00 00 90  	adrp	x1, 0x0 <_checkout+0x94>
+     1a4: 21 00 00 91  	add	x1, x1, #0
+     1a8: 00 00 00 94  	bl	0x1a8 <_checkout+0x9c>
+     1ac: e0 1b 00 f9  	str	x0, [sp, #48]
+     1b0: 00 00 00 90  	adrp	x0, 0x0 <_checkout+0xa4>
+     1b4: 00 00 00 91  	add	x0, x0, #0
+     1b8: 01 00 00 90  	adrp	x1, 0x0 <_checkout+0xac>
+     1bc: 21 00 00 91  	add	x1, x1, #0
+     1c0: 00 00 00 94  	bl	0x1c0 <_checkout+0xb4>
+     1c4: e0 17 00 f9  	str	x0, [sp, #40]
+     1c8: e8 1f 40 f9  	ldr	x8, [sp, #56]
+     1cc: e8 00 00 b5  	cbnz	x8, 0x1e8 <_checkout+0xdc>
+     1d0: 01 00 00 14  	b	0x1d4 <_checkout+0xc8>
+     1d4: 00 00 00 90  	adrp	x0, 0x0 <_checkout+0xc8>
+     1d8: 00 00 00 91  	add	x0, x0, #0
+     1dc: 00 00 00 94  	bl	0x1dc <_checkout+0xd0>
+     1e0: 00 00 80 52  	mov	w0, #0
+     1e4: 00 00 00 94  	bl	0x1e4 <_checkout+0xd8>
+     1e8: 01 00 00 14  	b	0x1ec <_checkout+0xe0>
+     1ec: e0 1f 40 f9  	ldr	x0, [sp, #56]
+     1f0: 00 00 00 94  	bl	0x1f0 <_checkout+0xe4>
+     1f4: e8 03 00 aa  	mov	x8, x0
+     1f8: e0 9f 00 91  	add	x0, sp, #39
+     1fc: e8 9f 00 39  	strb	w8, [sp, #39]
+     200: e1 53 01 91  	add	x1, sp, #84
+     204: 00 00 00 94  	bl	0x204 <_checkout+0xf8>
+     208: c0 00 00 34  	cbz	w0, 0x220 <_checkout+0x114>
+     20c: 01 00 00 14  	b	0x210 <_checkout+0x104>
+     210: 00 00 00 90  	adrp	x0, 0x0 <_checkout+0x104>
+     214: 00 00 00 91  	add	x0, x0, #0
+     218: 00 00 00 94  	bl	0x218 <_checkout+0x10c>
+     21c: 15 00 00 14  	b	0x270 <_checkout+0x164>
+     220: 01 00 00 14  	b	0x224 <_checkout+0x118>
+     224: 01 00 00 14  	b	0x228 <_checkout+0x11c>
+     228: e8 9f c0 39  	ldrsb	w8, [sp, #39]
+     22c: 08 05 00 31  	adds	w8, w8, #1
+     230: e1 fd ff 54  	b.ne	0x1ec <_checkout+0xe0>
+     234: 01 00 00 14  	b	0x238 <_checkout+0x12c>
+     238: e0 1f 40 f9  	ldr	x0, [sp, #56]
+     23c: 00 00 00 94  	bl	0x23c <_checkout+0x130>
+     240: e0 1b 40 f9  	ldr	x0, [sp, #48]
+     244: ea 27 40 f9  	ldr	x10, [sp, #72]
+     248: e8 23 40 f9  	ldr	x8, [sp, #64]
+     24c: 01 00 00 90  	adrp	x1, 0x0 <_checkout+0x140>
+     250: 21 00 00 91  	add	x1, x1, #0
+     254: e9 03 00 91  	mov	x9, sp
+     258: 2a 01 00 f9  	str	x10, [x9]
+     25c: 28 05 00 f9  	str	x8, [x9, #8]
+     260: 00 00 00 94  	bl	0x260 <_checkout+0x154>
+     264: e0 1b 40 f9  	ldr	x0, [sp, #48]
+     268: 00 00 00 94  	bl	0x268 <_checkout+0x15c>
+     26c: 01 00 00 14  	b	0x270 <_checkout+0x164>
+     270: 08 00 00 90  	adrp	x8, 0x0 <_checkout+0x164>
+     274: 08 01 40 f9  	ldr	x8, [x8]
+     278: 08 01 40 f9  	ldr	x8, [x8]
+     27c: a9 83 5f f8  	ldur	x9, [x29, #-8]
+     280: 08 01 09 eb  	subs	x8, x8, x9
+     284: a1 00 00 54  	b.ne	0x298 <_checkout+0x18c>
+     288: 01 00 00 14  	b	0x28c <_checkout+0x180>
+     28c: fd 7b 4c a9  	ldp	x29, x30, [sp, #192]
+     290: ff 43 03 91  	add	sp, sp, #208
+     294: c0 03 5f d6  	ret
+     298: 00 00 00 94  	bl	0x298 <_checkout+0x18c>
+
+000000000000029c <_fileReader>:
+     29c: ff 03 01 d1  	sub	sp, sp, #64
+     2a0: fd 7b 03 a9  	stp	x29, x30, [sp, #48]
+     2a4: fd c3 00 91  	add	x29, sp, #48
+     2a8: a0 03 1f f8  	stur	x0, [x29, #-16]
+     2ac: a0 03 5f f8  	ldur	x0, [x29, #-16]
+     2b0: 01 00 00 90  	adrp	x1, 0x0 <_fileReader+0x14>
+     2b4: 21 00 00 91  	add	x1, x1, #0
+     2b8: 00 00 00 94  	bl	0x2b8 <_fileReader+0x1c>
+     2bc: e0 0f 00 f9  	str	x0, [sp, #24]
+     2c0: e8 0f 40 f9  	ldr	x8, [sp, #24]
+     2c4: 48 01 00 b5  	cbnz	x8, 0x2ec <_fileReader+0x50>
+     2c8: 01 00 00 14  	b	0x2cc <_fileReader+0x30>
+     2cc: 08 00 00 90  	adrp	x8, 0x0 <_fileReader+0x30>
+     2d0: 08 01 40 f9  	ldr	x8, [x8]
+     2d4: 00 01 40 f9  	ldr	x0, [x8]
+     2d8: 01 00 00 90  	adrp	x1, 0x0 <_fileReader+0x3c>
+     2dc: 21 00 00 91  	add	x1, x1, #0
+     2e0: 00 00 00 94  	bl	0x2e0 <_fileReader+0x44>
+     2e4: bf 83 1f f8  	stur	xzr, [x29, #-8]
+     2e8: 2a 00 00 14  	b	0x390 <_fileReader+0xf4>
+     2ec: e0 0f 40 f9  	ldr	x0, [sp, #24]
+     2f0: 01 00 80 d2  	mov	x1, #0
+     2f4: 42 00 80 52  	mov	w2, #2
+     2f8: 00 00 00 94  	bl	0x2f8 <_fileReader+0x5c>
+     2fc: e0 0f 40 f9  	ldr	x0, [sp, #24]
+     300: 00 00 00 94  	bl	0x300 <_fileReader+0x64>
+     304: e0 0b 00 f9  	str	x0, [sp, #16]
+     308: e0 0f 40 f9  	ldr	x0, [sp, #24]
+     30c: 00 00 00 94  	bl	0x30c <_fileReader+0x70>
+     310: e8 0b 40 f9  	ldr	x8, [sp, #16]
+     314: 00 05 00 91  	add	x0, x8, #1
+     318: 00 00 00 94  	bl	0x318 <_fileReader+0x7c>
+     31c: e0 07 00 f9  	str	x0, [sp, #8]
+     320: e8 07 40 f9  	ldr	x8, [sp, #8]
+     324: 88 01 00 b5  	cbnz	x8, 0x354 <_fileReader+0xb8>
+     328: 01 00 00 14  	b	0x32c <_fileReader+0x90>
+     32c: 08 00 00 90  	adrp	x8, 0x0 <_fileReader+0x90>
+     330: 08 01 40 f9  	ldr	x8, [x8]
+     334: 00 01 40 f9  	ldr	x0, [x8]
+     338: 01 00 00 90  	adrp	x1, 0x0 <_fileReader+0x9c>
+     33c: 21 00 00 91  	add	x1, x1, #0
+     340: 00 00 00 94  	bl	0x340 <_fileReader+0xa4>
+     344: e0 0f 40 f9  	ldr	x0, [sp, #24]
+     348: 00 00 00 94  	bl	0x348 <_fileReader+0xac>
+     34c: bf 83 1f f8  	stur	xzr, [x29, #-8]
+     350: 10 00 00 14  	b	0x390 <_fileReader+0xf4>
+     354: e0 07 40 f9  	ldr	x0, [sp, #8]
+     358: e2 0b 40 f9  	ldr	x2, [sp, #16]
+     35c: e3 0f 40 f9  	ldr	x3, [sp, #24]
+     360: 21 00 80 d2  	mov	x1, #1
+     364: 00 00 00 94  	bl	0x364 <_fileReader+0xc8>
+     368: e0 03 00 f9  	str	x0, [sp]
+     36c: e8 07 40 f9  	ldr	x8, [sp, #8]
+     370: e9 03 40 f9  	ldr	x9, [sp]
+     374: 08 01 09 8b  	add	x8, x8, x9
+     378: 1f 01 00 39  	strb	wzr, [x8]
+     37c: e0 0f 40 f9  	ldr	x0, [sp, #24]
+     380: 00 00 00 94  	bl	0x380 <_fileReader+0xe4>
+     384: e8 07 40 f9  	ldr	x8, [sp, #8]
+     388: a8 83 1f f8  	stur	x8, [x29, #-8]
+     38c: 01 00 00 14  	b	0x390 <_fileReader+0xf4>
+     390: a0 83 5f f8  	ldur	x0, [x29, #-8]
+     394: fd 7b 43 a9  	ldp	x29, x30, [sp, #48]
+     398: ff 03 01 91  	add	sp, sp, #64
+     39c: c0 03 5f d6  	ret
+
+00000000000003a0 <_main>:
+     3a0: ff 03 03 d1  	sub	sp, sp, #192
+     3a4: fd 7b 0b a9  	stp	x29, x30, [sp, #176]
+     3a8: fd c3 02 91  	add	x29, sp, #176
+     3ac: 08 00 00 90  	adrp	x8, 0x0 <_main+0xc>
+     3b0: 08 01 40 f9  	ldr	x8, [x8]
+     3b4: 08 01 40 f9  	ldr	x8, [x8]
+     3b8: a8 83 1f f8  	stur	x8, [x29, #-8]
+     3bc: ff 43 00 b9  	str	wzr, [sp, #64]
+     3c0: 00 00 00 90  	adrp	x0, 0x0 <_main+0x20>
+     3c4: 00 00 00 91  	add	x0, x0, #0
+     3c8: 00 00 00 94  	bl	0x3c8 <_main+0x28>
+     3cc: 00 00 00 90  	adrp	x0, 0x0 <_main+0x2c>
+     3d0: 00 00 00 91  	add	x0, x0, #0
+     3d4: 00 00 00 94  	bl	0x3d4 <_main+0x34>
+     3d8: 00 00 00 90  	adrp	x0, 0x0 <_main+0x38>
+     3dc: 00 00 00 91  	add	x0, x0, #0
+     3e0: 00 00 00 94  	bl	0x3e0 <_main+0x40>
+     3e4: 00 00 00 90  	adrp	x0, 0x0 <_main+0x44>
+     3e8: 00 00 00 91  	add	x0, x0, #0
+     3ec: e9 03 00 91  	mov	x9, sp
+     3f0: e8 eb 00 91  	add	x8, sp, #58
+     3f4: e8 17 00 f9  	str	x8, [sp, #40]
+     3f8: 28 01 00 f9  	str	x8, [x9]
+     3fc: 00 00 00 94  	bl	0x3fc <_main+0x5c>
+     400: e0 17 40 f9  	ldr	x0, [sp, #40]
+     404: 01 00 00 90  	adrp	x1, 0x0 <_main+0x64>
+     408: 21 00 00 91  	add	x1, x1, #0
+     40c: 00 00 00 94  	bl	0x40c <_main+0x6c>
+     410: 20 04 00 35  	cbnz	w0, 0x494 <_main+0xf4>
+     414: 01 00 00 14  	b	0x418 <_main+0x78>
+     418: 08 00 00 90  	adrp	x8, 0x0 <_main+0x78>
+     41c: 08 01 40 f9  	ldr	x8, [x8]
+     420: 00 01 40 f9  	ldr	x0, [x8]
+     424: 00 00 00 94  	bl	0x424 <_main+0x84>
+     428: 00 00 00 90  	adrp	x0, 0x0 <_main+0x88>
+     42c: 00 00 00 91  	add	x0, x0, #0
+     430: 00 00 00 94  	bl	0x430 <_main+0x90>
+     434: 00 00 00 90  	adrp	x0, 0x0 <_main+0x94>
+     438: 00 00 00 91  	add	x0, x0, #0
+     43c: e0 0f 00 f9  	str	x0, [sp, #24]
+     440: e9 03 00 91  	mov	x9, sp
+     444: e8 13 01 91  	add	x8, sp, #68
+     448: e8 13 00 f9  	str	x8, [sp, #32]
+     44c: 28 01 00 f9  	str	x8, [x9]
+     450: 00 00 00 94  	bl	0x450 <_main+0xb0>
+     454: 00 00 00 90  	adrp	x0, 0x0 <_main+0xb4>
+     458: 00 00 00 91  	add	x0, x0, #0
+     45c: 00 00 00 94  	bl	0x45c <_main+0xbc>
+     460: e8 13 40 f9  	ldr	x8, [sp, #32]
+     464: e0 0f 40 f9  	ldr	x0, [sp, #24]
+     468: 08 c9 00 91  	add	x8, x8, #50
+     46c: e9 03 00 91  	mov	x9, sp
+     470: 28 01 00 f9  	str	x8, [x9]
+     474: 00 00 00 94  	bl	0x474 <_main+0xd4>
+     478: e0 13 40 f9  	ldr	x0, [sp, #32]
+     47c: 01 c8 00 91  	add	x1, x0, #50
+     480: 00 00 00 94  	bl	0x480 <_main+0xe0>
+     484: 00 00 00 90  	adrp	x0, 0x0 <_main+0xe4>
+     488: 00 00 00 91  	add	x0, x0, #0
+     48c: 00 00 00 94  	bl	0x48c <_main+0xec>
+     490: 47 00 00 14  	b	0x5ac <_main+0x20c>
+     494: e0 eb 00 91  	add	x0, sp, #58
+     498: 01 00 00 90  	adrp	x1, 0x0 <_main+0xf8>
+     49c: 21 00 00 91  	add	x1, x1, #0
+     4a0: 00 00 00 94  	bl	0x4a0 <_main+0x100>
+     4a4: 80 01 00 35  	cbnz	w0, 0x4d4 <_main+0x134>
+     4a8: 01 00 00 14  	b	0x4ac <_main+0x10c>
+     4ac: 00 00 00 90  	adrp	x0, 0x0 <_main+0x10c>
+     4b0: 00 00 00 91  	add	x0, x0, #0
+     4b4: 00 00 00 94  	bl	0x4b4 <_main+0x114>
+     4b8: e8 03 00 aa  	mov	x8, x0
+     4bc: 00 00 00 90  	adrp	x0, 0x0 <_main+0x11c>
+     4c0: 00 00 00 91  	add	x0, x0, #0
+     4c4: e9 03 00 91  	mov	x9, sp
+     4c8: 28 01 00 f9  	str	x8, [x9]
+     4cc: 00 00 00 94  	bl	0x4cc <_main+0x12c>
+     4d0: 36 00 00 14  	b	0x5a8 <_main+0x208>
+     4d4: e0 eb 00 91  	add	x0, sp, #58
+     4d8: 01 00 00 90  	adrp	x1, 0x0 <_main+0x138>
+     4dc: 21 00 00 91  	add	x1, x1, #0
+     4e0: 00 00 00 94  	bl	0x4e0 <_main+0x140>
+     4e4: c0 03 00 35  	cbnz	w0, 0x55c <_main+0x1bc>
+     4e8: 01 00 00 14  	b	0x4ec <_main+0x14c>
+     4ec: 08 00 00 90  	adrp	x8, 0x0 <_main+0x14c>
+     4f0: 08 01 40 f9  	ldr	x8, [x8]
+     4f4: 00 01 40 f9  	ldr	x0, [x8]
+     4f8: 00 00 00 94  	bl	0x4f8 <_main+0x158>
+     4fc: 00 00 00 90  	adrp	x0, 0x0 <_main+0x15c>
+     500: 00 00 00 91  	add	x0, x0, #0
+     504: 00 00 00 94  	bl	0x504 <_main+0x164>
+     508: 00 00 00 90  	adrp	x0, 0x0 <_main+0x168>
+     50c: 00 00 00 91  	add	x0, x0, #0
+     510: e0 07 00 f9  	str	x0, [sp, #8]
+     514: e9 03 00 91  	mov	x9, sp
+     518: e8 13 01 91  	add	x8, sp, #68
+     51c: e8 0b 00 f9  	str	x8, [sp, #16]
+     520: 28 01 00 f9  	str	x8, [x9]
+     524: 00 00 00 94  	bl	0x524 <_main+0x184>
+     528: 00 00 00 90  	adrp	x0, 0x0 <_main+0x188>
+     52c: 00 00 00 91  	add	x0, x0, #0
+     530: 00 00 00 94  	bl	0x530 <_main+0x190>
+     534: e8 0b 40 f9  	ldr	x8, [sp, #16]
+     538: e0 07 40 f9  	ldr	x0, [sp, #8]
+     53c: 08 c9 00 91  	add	x8, x8, #50
+     540: e9 03 00 91  	mov	x9, sp
+     544: 28 01 00 f9  	str	x8, [x9]
+     548: 00 00 00 94  	bl	0x548 <_main+0x1a8>
+     54c: e0 0b 40 f9  	ldr	x0, [sp, #16]
+     550: 01 c8 00 91  	add	x1, x0, #50
+     554: 00 00 00 94  	bl	0x554 <_main+0x1b4>
+     558: 13 00 00 14  	b	0x5a4 <_main+0x204>
+     55c: e0 eb 00 91  	add	x0, sp, #58
+     560: 01 00 00 90  	adrp	x1, 0x0 <_main+0x1c0>
+     564: 21 00 00 91  	add	x1, x1, #0
+     568: 00 00 00 94  	bl	0x568 <_main+0x1c8>
+     56c: 60 00 00 34  	cbz	w0, 0x578 <_main+0x1d8>
+     570: 01 00 00 14  	b	0x574 <_main+0x1d4>
+     574: 0b 00 00 14  	b	0x5a0 <_main+0x200>
+     578: e0 eb 00 91  	add	x0, sp, #58
+     57c: 01 00 00 90  	adrp	x1, 0x0 <_main+0x1dc>
+     580: 21 00 00 91  	add	x1, x1, #0
+     584: 00 00 00 94  	bl	0x584 <_main+0x1e4>
+     588: 60 00 00 34  	cbz	w0, 0x594 <_main+0x1f4>
+     58c: 01 00 00 14  	b	0x590 <_main+0x1f0>
+     590: 03 00 00 14  	b	0x59c <_main+0x1fc>
+     594: 00 00 80 52  	mov	w0, #0
+     598: 00 00 00 94  	bl	0x598 <_main+0x1f8>
+     59c: 01 00 00 14  	b	0x5a0 <_main+0x200>
+     5a0: 01 00 00 14  	b	0x5a4 <_main+0x204>
+     5a4: 01 00 00 14  	b	0x5a8 <_main+0x208>
+     5a8: 01 00 00 14  	b	0x5ac <_main+0x20c>
+     5ac: 08 00 00 90  	adrp	x8, 0x0 <_main+0x20c>
+     5b0: 08 01 40 f9  	ldr	x8, [x8]
+     5b4: 08 01 40 f9  	ldr	x8, [x8]
+     5b8: a9 83 5f f8  	ldur	x9, [x29, #-8]
+     5bc: 08 01 09 eb  	subs	x8, x8, x9
+     5c0: c1 00 00 54  	b.ne	0x5d8 <_main+0x238>
+     5c4: 01 00 00 14  	b	0x5c8 <_main+0x228>
+     5c8: 00 00 80 52  	mov	w0, #0
+     5cc: fd 7b 4b a9  	ldp	x29, x30, [sp, #176]
+     5d0: ff 03 03 91  	add	sp, sp, #192
+     5d4: c0 03 5f d6  	ret
+     5d8: 00 00 00 94  	bl	0x5d8 <_main+0x238>

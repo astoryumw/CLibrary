@@ -46,18 +46,30 @@ void getMain() {
 
 void fileWriter(char title[], char author[]) {
     // open file
-    FILE *file = fopen("filename.txt","a");
-    printf("%s %s", title, author);
-    fprintf(file, "\nTitle: %s, Author: %s\n", title, author);
+    // if (bookStatus==1) { // true book exists
+        FILE *file = fopen("filename.txt","a");
+        printf("%s %s", title, author);
+        fprintf(file, "\nTitle: %s, Author: %s\n", title, author);
 
-    fclose(file);
+        fclose(file);
+    // } else if (bookStatus==0) { // false
+        
+    // }
+
 }
 
 void checkout(char title[], char author[]) {
+    // concatenate strings
+    char result[100];
+    strcpy(result, "Title: ");
+    strcat(result, title);
+    strcat(result, ", Author: ");
+    strcat(result, author);
     // first take out the book from filename.txt by copying all in filename
     // except book into new list, then copy that file into filename
     FILE *file = fopen("filename.txt","r");
     FILE *newFile = fopen("BooksCheckedOut.txt","a");
+    FILE *replacementFile = fopen("replacementFile.txt","r+"); // open for reading and writing
     char ch;
     if (file == NULL) {
         printf("File cannot be opened.\n");
@@ -66,7 +78,16 @@ void checkout(char title[], char author[]) {
 
     do {
         ch = fgetc(file);
-        printf("%c", ch);
+        // printf("%c", ch);
+        // if book found, remove it from filename.txt
+        // add to newFile
+        if (strcmp(&ch, result)) {
+            printf("Found!");
+
+            return;
+        } else {
+
+        }
     } while (ch != EOF);
     fclose(file);
     
@@ -120,9 +141,10 @@ int main() {
     printf("Enter add, list, or delete.\n");
     scanf("%s",choice); // strcmp string compare
     // printf("%s", choice);
+    struct myObject book;
     if (strcmp(choice, "add") == 0) {
+        // bool bookStatus = true;
         fflush(stdin);
-        struct myObject book;
         printf("Enter title: \n");
         scanf("%[^\n]%*c", book.title);
         printf("Enter author: \n");
@@ -132,8 +154,12 @@ int main() {
     } else if (strcmp(choice, "list") == 0) {
         printf("%s", fileReader("filename.txt"));
     } else if (strcmp(choice, "checkout") == 0) {
-        // struct Main m = getMain();
-        // checkout(m.title, m.author);
+        fflush(stdin);
+        printf("Enter title: \n");
+        scanf("%[^\n]%*c", book.title);
+        printf("Enter author: \n");
+        scanf("%[^\n]%*c", book.author);
+        checkout(book.title, book.author);
     } else if (strcmp(choice, "return")) {
 
     } else if (strcmp(choice, "remove")) {
